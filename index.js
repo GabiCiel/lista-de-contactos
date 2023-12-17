@@ -1,19 +1,84 @@
-const contactos = ["David Hernandez", "Alex Hernandez", "Cielo Herrera", "Emilio sepulveda", "juan Perez"]
+const contactos = [
+    {
+        id: 1,
+        nombres: "David",
+        apellidos: "Hernandez",
+        telefono: "1239172789",
+        ubicacion: {
+            ciudad: "Ciudad1",
+            direccion: "Dirección1"
+        }
+    },
+    {
+        id: 2,
+        nombres: "Alex",
+        apellidos: "Hernandez",
+        telefono: "578387871",
+        ubicacion: {
+            ciudad: "Ciudad2",
+            direccion: "Dirección2"
+        }
+    },
+    {
+        id: 3,
+        nombres: "Cielo",
+        apellidos: "Herrera",
+        telefono: "739257287",
+        ubicacion: {
+            ciudad: "Ciudad3",
+            direccion: "Dirección3"
+        }
+    },
+    {
+        id: 4,
+        nombres: "Emilio",
+        apellidos: "Sepulveda",
+        telefono: "2983740876",
+        ubicacion: {
+            ciudad: "Ciudad4",
+            direccion: "Dirección4"
+        }
+    },
+    {
+        id: 5,
+        nombres: "Juan",
+        apellidos: "Perez",
+        telefono: "096334289",
+        ubicacion: {
+            ciudad: "Ciudad5",
+            direccion: "Dirección5"
+        }
+    }
+];
 
-function agregarContacto(){
-let nuevoContacto = "Adrian España"
-contactos.unshift(nuevoContacto);
+function agregarContacto(id, nombres, apellidos, telefono, ciudad, direccion) {
+    let nuevoContacto = {
+        id: id,
+        nombres: nombres,
+        apellidos: apellidos,
+        telefono: telefono,
+        ubicacion: {
+            ciudad: ciudad,
+            direccion: direccion
+        }
+    };
+    contactos.unshift(nuevoContacto)
 }
-agregarContacto();
 
 
-let nuevaAge
-function borrar(){
-   nuevaAge = contactos.pop();
-}
+agregarContacto(6, "Adrian", "España", "08368018", "Ciudad6", "Dirección6");
+
+function borrar() {
+    let eliminado = contactos.pop();
+    console.log("Contacto eliminado: ${eliminado.nombres} ${eliminado.apellidos}");
+};
+
+
 borrar();
 
-function mostrar(){
+function mostrar() {
     console.log(contactos);
-}
-mostrar(nuevaAge);
+};
+
+
+mostrar();
